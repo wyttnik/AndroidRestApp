@@ -11,47 +11,61 @@
         android:id="@+id/detail_drink_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/black"
         tools:text="Margaritha"
-        android:textSize="20sp"
+        android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
-    <ImageView
-        android:id="@+id/detail_drink_image"
-        android:layout_width="130dp"
-        android:layout_height="130dp"
-        android:scaleType="fitXY"
-        tools:src="@tools:sample/backgrounds/scenic"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/detail_drink_image_container"
+        app:layout_constraintTop_toBottomOf="@id/detail_drink_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:cardCornerRadius="8dp"
+        android:layout_marginTop="10dp">
+        <ImageView
+            android:id="@+id/detail_drink_image"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:scaleType="fitXY"
+            tools:src="@tools:sample/backgrounds/scenic"/>
+    </androidx.cardview.widget.CardView>
+
 
     <TextView
         android:id="@+id/detail_instruction_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/black"
         android:text="Instruction"
-        android:textSize="15sp"
+        android:textSize="18sp"
         android:textStyle="bold|italic"
         android:layout_marginTop="20dp"
-        app:layout_constraintTop_toBottomOf="@id/detail_drink_image"
+        app:layout_constraintTop_toBottomOf="@id/detail_drink_image_container"
         app:layout_constraintStart_toStartOf="parent"/>
 
     <TextView
         android:id="@+id/detail_drink_instruction"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:text="sampletextsampletextsampletext"
         android:layout_marginTop="10dp"
+        android:justificationMode="inter_word"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/detail_instruction_label"
-        app:layout_constraintStart_toStartOf="parent"/>
+        tools:text="sampletextsampletextsampletext" />
 
     <TextView
         android:id="@+id/detail_ingredients_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ingredients"
-        android:textSize="15sp"
+        android:textColor="@color/black"
+        android:text="Ingredients:"
+        android:textSize="18sp"
         android:textStyle="bold|italic"
         android:layout_marginTop="25dp"
         app:layout_constraintTop_toBottomOf="@id/detail_drink_instruction"
@@ -61,6 +75,8 @@
         android:id="@+id/detail_drink_ingredients"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="16sp"
         tools:text="sampletext\nsampletextsampletext"
         android:layout_marginTop="10dp"
         app:layout_constraintTop_toBottomOf="@id/detail_ingredients_label"
